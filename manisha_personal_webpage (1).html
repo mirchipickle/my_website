@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Personal portfolio of Manisha Sengupta — Product Management, Analytics and Finance.">
+<title>Manisha Sengupta | Product & Finance Portfolio</title>
+<meta name="theme-color" content="#0b1f3a">
+<style>
+  :root {
+    --blue:#2f6f9f; --red:#9e3039; --yellow:#b69a63; --green:#476b63;
+    --ink:#172536; --muted:#5e6b78; --line:#d9e0e7; --surface:#fff; --soft:#f3f6f8; --navy:#0b1f3a;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; color:var(--ink); background:var(--surface); font-family:Arial,Helvetica,sans-serif; line-height:1.65; }
+  a { color:var(--blue); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .topbar { display:flex; align-items:center; justify-content:space-between; gap:24px; padding:18px clamp(20px,5vw,72px); border-bottom:3px solid #b69a63; position:sticky; top:0; background:#0b1f3a; z-index:5; }
+  .brand { display:flex; align-items:center; gap:9px; font-weight:700; font-size:17px; letter-spacing:.2px; white-space:nowrap; color:#fff; }
+  .dots { display:flex; gap:3px; }
+  .dots i { width:8px; height:8px; border-radius:50%; display:block; }
+  .nav { display:flex; gap:22px; flex-wrap:wrap; justify-content:flex-end; font-size:14px; }
+  .nav a { color:#edf2f7; }
+  .nav a:hover { color:#d8c28e; }
+  main { max-width:1120px; margin:auto; padding:0 clamp(20px,5vw,48px); }
+  .hero { min-height:76vh; display:grid; grid-template-columns:1.35fr .65fr; gap:48px; align-items:center; padding:72px 0 60px; }
+  .eyebrow { color:#b69a63; font-weight:700; font-size:12px; letter-spacing:2px; text-transform:uppercase; }
+  h1 { font-family:Georgia,'Times New Roman',serif; font-size:clamp(42px,6.5vw,76px); letter-spacing:-1.5px; line-height:1.08; margin:16px 0 20px; font-weight:500; color:#0b1f3a; }
+  .google-word span:nth-child(1), .gblue { color:var(--blue); } .gred { color:var(--red); } .gyellow { color:var(--yellow); } .ggreen { color:var(--green); }
+  .hero p { color:var(--muted); font-size:18px; max-width:650px; margin:0 0 26px; }
+  .chips { display:flex; gap:10px; flex-wrap:wrap; margin:24px 0 30px; }
+  .chip { border:1px solid var(--line); border-radius:2px; padding:8px 13px; font-size:13px; color:#3c4043; background:#fff; }
+  .actions { display:flex; gap:12px; flex-wrap:wrap; }
+  .btn { display:inline-flex; align-items:center; justify-content:center; padding:12px 20px; border-radius:2px; font-size:13px; font-weight:700; border:1px solid var(--line); }
+  .btn.primary { background:#0b1f3a; color:white; border-color:#0b1f3a; }
+  .btn.secondary { color:#0b1f3a; background:white; }
+  .profile-card { border:1px solid var(--line); border-radius:2px; border-top:5px solid #b69a63; padding:28px; box-shadow:0 8px 24px #0b1f3a0d; background:linear-gradient(145deg,#fff,#f4f7fa); }
+  .avatar { width:112px; height:112px; display:grid; place-items:center; border-radius:50%; margin:0 auto 18px; font-family:Georgia,serif; font-size:36px; font-weight:500; color:white; background:#0b1f3a; border:4px solid #e5d8b6; }
+  .profile-card h2 { text-align:center; margin:0; font-size:22px; letter-spacing:-.5px; }
+  .profile-card .role { text-align:center; color:var(--muted); font-size:14px; margin:5px 0 18px; }
+  .profile-line { display:flex; align-items:center; gap:10px; padding:12px 0; border-top:1px solid #e8eaed; font-size:14px; }
+  .profile-line b { color:#3c4043; font-weight:600; }
+  section { padding:62px 0; border-top:1px solid #f1f3f4; scroll-margin-top:80px; }
+  .section-head { margin-bottom:28px; }
+  .section-head h2 { margin:0 0 8px; font-size:clamp(28px,4vw,38px); letter-spacing:-1.3px; }
+  .section-head p { margin:0; color:var(--muted); max-width:720px; }
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .card { border:1px solid var(--line); border-radius:2px; padding:22px; background:#fff; border-bottom:3px solid #d9e0e7; transition:transform .18s,box-shadow .18s; }
+  .card:hover { transform:translateY(-2px); box-shadow:0 5px 18px #0b1f3a12; border-bottom-color:#b69a63; }
+  .icon { width:42px; height:42px; border-radius:12px; display:grid; place-items:center; font-size:20px; margin-bottom:16px; background:#e8f0fe; }
+  .card:nth-child(2) .icon { background:#fce8e6; } .card:nth-child(3) .icon { background:#e6f4ea; }
+  .card h3 { font-size:17px; margin:0 0 8px; } .card p { color:var(--muted); font-size:14px; margin:0; }
+  .timeline { position:relative; margin-left:8px; padding-left:28px; border-left:2px solid #e8eaed; }
+  .job { position:relative; padding:0 0 28px; }
+  .job:last-child { padding-bottom:0; }
+  .job:before { content:""; position:absolute; width:12px; height:12px; left:-35px; top:6px; border:3px solid white; border-radius:50%; background:var(--blue); box-shadow:0 0 0 1px var(--blue); }
+  .job h3 { margin:0; font-size:18px; } .job .company { color:var(--blue); font-weight:600; font-size:14px; }
+  .job .date { color:var(--muted); font-size:13px; margin:3px 0 8px; }
+  .job p { color:var(--muted); font-size:14px; margin:0; }
+  .education { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .edu-card { display:flex; gap:15px; padding:20px; border:1px solid var(--line); border-radius:2px; }
+  .edu-mark { width:42px; height:42px; flex:0 0 42px; border-radius:12px; display:grid; place-items:center; background:#0b1f3a; color:white; font-weight:700; }
+  .edu-card h3 { font-size:16px; margin:0 0 5px; } .edu-card p { color:var(--muted); font-size:14px; margin:0; }
+  .skills { display:flex; flex-wrap:wrap; gap:10px; }
+  .skill { padding:9px 14px; border-radius:2px; background:var(--soft); border:1px solid #f1f3f4; color:#3c4043; font-size:14px; }
+  .contact { display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:center; padding:30px; border:1px solid var(--line); border-top:5px solid #b69a63; border-radius:2px; background:#f3f6f8; }
+  .contact h3 { font-size:24px; margin:0 0 8px; letter-spacing:-.6px; }
+  .contact p { color:var(--muted); margin:0; }
+  .contact-links { display:flex; flex-direction:column; gap:12px; }
+  .contact-links a { display:flex; align-items:center; gap:10px; overflow-wrap:anywhere; }
+  footer { text-align:center; color:#d7e0e9; background:#0b1f3a; padding:28px 20px 36px; font-size:12px; border-top:3px solid #b69a63; }
+  @media(max-width:760px) {
+    .topbar { align-items:flex-start; flex-direction:column; gap:12px; position:static; }
+    .nav { justify-content:flex-start; gap:14px; }
+    .hero { min-height:unset; grid-template-columns:1fr; gap:30px; padding:54px 0 42px; }
+    h1 { letter-spacing:-2px; }
+    .profile-card { max-width:480px; width:100%; }
+    .grid { grid-template-columns:1fr; }
+    .education,.contact { grid-template-columns:1fr; }
+    section { padding:46px 0; }
+  }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home" aria-label="Manisha Sengupta home">
+    <span aria-hidden="true" style="width:34px;height:34px;border:1px solid #d5c18e;display:grid;place-items:center;color:#e0c98f;font-family:Georgia,serif;font-size:20px">M</span>
+    MANISHA SENGUPTA <span style="font-weight:400;color:#d4c28f;font-size:11px;letter-spacing:1.2px">· PORTFOLIO</span>
+  </a>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#about">About</a><a href="#expertise">Expertise</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a>
+  </nav>
+</header>
+<main>
+  <section class="hero" id="home" style="border-top:0">
+    <div>
+      <div class="eyebrow">Product · Analytics · Finance</div>
+      <h1><span class="gblue">Hello,</span><br>I'm <span class="gblue">M</span><span class="gred">a</span><span class="gyellow">n</span><span class="gblue">i</span><span class="ggreen">s</span><span class="gred">h</span><span class="gblue">a</span><span>.</span></h1>
+      <p>Product Associate at JPMorgan Chase with 5+ years of experience across product, analytics, and finance. I bring together structured problem-solving, cross-functional collaboration, and data-informed decisions to help move products forward.</p>
+      <div class="chips"><span class="chip">JPMorgan Chase</span><span class="chip">IIM Kozhikode</span><span class="chip">CSPO Certified</span></div>
+      <div class="actions"><a class="btn primary" href="#contact">Get in touch</a><a class="btn secondary" href="https://www.linkedin.com/in/manishasengupta" target="_blank" rel="noopener noreferrer">View LinkedIn ↗</a></div>
+    </div>
+    <aside class="profile-card">
+      <div class="avatar" aria-hidden="true">MS</div>
+      <h2>Manisha Sengupta</h2>
+      <div class="role">Product Associate · Hyderabad, India</div>
+      <div class="profile-line"><span>◉</span><div><b>Focus</b><br>Product execution & lifecycle</div></div>
+      <div class="profile-line"><span>▦</span><div><b>Strengths</b><br>Requirements, backlog, stakeholder alignment</div></div>
+      <div class="profile-line"><span>↗</span><div><b>Interests</b><br>Learning and investments</div></div>
+    </aside>
+  </section>
+
+  <section id="about">
+    <div class="section-head"><h2>About me</h2><p>I work at the intersection of product, technology, operations, and business. My experience includes requirement gathering, backlog management, end-to-end product lifecycle activities, and data-driven decision-making in enterprise and finance environments. I enjoy learning new things and have a keen interest in the investment field.</p></div>
+    <div class="grid">
+      <article class="card"><div class="icon">🎯</div><h3>Product thinking</h3><p>Turning business needs and user requirements into clear priorities and actionable work.</p></article>
+      <article class="card"><div class="icon">🤝</div><h3>Cross-functional delivery</h3><p>Working with Engineering, Operations, and Business stakeholders to support delivery.</p></article>
+      <article class="card"><div class="icon">📊</div><h3>Data-informed decisions</h3><p>Bringing analytics and finance experience to problem-solving and product execution.</p></article>
+    </div>
+  </section>
+
+  <section id="expertise">
+    <div class="section-head"><h2>Areas of expertise</h2><p>Core skills and capabilities highlighted in my professional profile.</p></div>
+    <div class="skills">
+      <span class="skill">Product Management</span><span class="skill">Product Execution</span><span class="skill">Requirement Gathering</span><span class="skill">Backlog Management</span><span class="skill">Analytics</span><span class="skill">Finance</span><span class="skill">IT Compliance</span><span class="skill">Jira</span><span class="skill">Cross-functional Collaboration</span><span class="skill">Stakeholder Management</span><span class="skill">Data-driven Decision-making</span>
+    </div>
+    <div class="section-head" style="margin-top:34px"><h2 style="font-size:24px">Languages</h2></div>
+    <div class="skills"><span class="skill">Telugu · Professional working</span><span class="skill">English · Professional working</span><span class="skill">Hindi · Professional working</span><span class="skill">Bengali · Limited working</span></div>
+    <div class="section-head" style="margin-top:34px"><h2 style="font-size:24px">Certifications</h2></div>
+    <div class="skills"><span class="skill">Certified Scrum Product Owner (CSPO)</span><span class="skill">Career Pivot Series Participant · 2022</span></div>
+  </section>
+
+  <section id="experience">
+    <div class="section-head"><h2>Experience</h2><p>A career built across product, analytics, consulting, and finance.</p></div>
+    <div class="timeline">
+      <article class="job"><h3>Product Associate</h3><div class="company">JPMorgan Chase & Co.</div><div class="date">January 2024 – Present · Hyderabad, India</div><p>Driving product execution, supporting product lifecycle activities, requirement gathering, backlog management, and collaboration across business and technology stakeholders.</p></article>
+      <article class="job"><h3>Senior Product Analyst</h3><div class="company">JPMorgan Chase & Co.</div><div class="date">March 2023 – January 2024 · Hyderabad, India</div><p>Worked in a product analytics role, bringing analytical thinking and stakeholder collaboration to enterprise product work.</p></article>
+      <article class="job"><h3>Consultant</h3><div class="company">Randstad · Deployed with JPMorgan Chase, Hyderabad</div><div class="date">March 2022 – February 2023</div><p>Consulting experience in a financial-services environment.</p></article>
+      <article class="job"><h3>Manager – Accounts & MIS</h3><div class="company">MSMEx</div><div class="date">June 2021 – March 2022 · Hyderabad, India</div><p>Accounts and management information systems experience.</p></article>
+      <article class="job"><h3>Finance Executive</h3><div class="company">ASPL</div><div class="date">December 2017 – July 2020 · Hyderabad, India</div><p>Finance-focused role building on accounting and reporting experience.</p></article>
+      <article class="job"><h3>Article / Audit Assistant</h3><div class="company">G V Laxman Rao & Co.</div><div class="date">October 2014 – October 2017 · Hyderabad, India</div><p>Early-career experience in audit and accounting.</p></article>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-head"><h2>Education</h2><p>Academic and professional learning in finance, accounting, and financial management.</p></div>
+    <div class="education">
+      <article class="edu-card"><div class="edu-mark">IIM</div><div><h3>Indian Institute of Management, Kozhikode</h3><p>Professional Certificate Program in Financial Analysis & Financial Management<br>September 2021 – June 2022</p></div></article>
+      <article class="edu-card"><div class="edu-mark">OU</div><div><h3>Osmania University</h3><p>Bachelor of Commerce (B.Com), Accounting and Finance<br>2013 – 2016</p></div></article>
+      <article class="edu-card"><div class="edu-mark">ICAI</div><div><h3>The Institute of Chartered Accountants of India</h3><p>IPCC — Accounting, Taxation, Auditing, Costing, Law<br>2013 – 2014</p></div></article>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div><div class="eyebrow">Let's connect</div><h3>Have a product challenge or an opportunity?</h3><p>I'd be happy to connect and exchange ideas.</p></div>
+      <div class="contact-links">
+        <a href="mailto:manishasen.cute@gmail.com">✉️ <span>manishasen.cute@gmail.com</span></a>
+        <a href="https://www.linkedin.com/in/manishasengupta" target="_blank" rel="noopener noreferrer">↗ <span>linkedin.com/in/manishasengupta</span></a>
+        <span>📍 Hyderabad, Telangana, India</span>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>© <span id="year">2026</span> Manisha Sengupta · Personal professional portfolio</footer>
+</body>
+</html>
